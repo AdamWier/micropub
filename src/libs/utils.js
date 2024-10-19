@@ -44,7 +44,7 @@ const utils = {
 		try {
 			const url = new URL(urlString)
 			if (url &&
-					url.origin == process.env.ME.replace(/\/$/, '') &&
+					url.origin.replace("www.", "") == process.env.ME.replace(/\/$/, '') &&
 					url.pathname) {
 				const dir = (process.env.CONTENT_DIR || 'src').replace(/\/$/, '')
 				console.log(`${dir}/${url.pathname.replace(/^\/|\/$/g, '')}.md`)
