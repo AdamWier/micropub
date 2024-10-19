@@ -94,9 +94,11 @@ export default {
 		for (let [key, value] of Object.entries(attributes)) {
 			if (renameProperties[key]) {
 				parsed[renameProperties[key]] = value
-			} else if (['date', 'updated'].includes(key)) {
-				parsed[key] = value.toISOString()
-			} else if (['draft'].includes(key)) {
+			} 
+			// else if (['date', 'updated'].includes(key)) {
+			// 	parsed[key] = value.toISOString()
+			// } 
+			else if (['draft'].includes(key)) {
 				parsed['status'] = key
 			} else {
 				parsed[key] = value
