@@ -84,8 +84,11 @@ export default {
 	},
 
 	fromFrontMatter: data => {
+		console.log("data", data)
 		const fm = matter(data.toString())
+		console.log("front matter", fm)
 		const attributes = fm.data
+		console.log("attr", attributes)
 		const parsed = {}
 
 		for (let [key, value] of Object.entries(attributes)) {
