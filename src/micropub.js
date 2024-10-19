@@ -36,6 +36,7 @@ const getHandler = async query => {
 }
 
 const micropubFn = async event => {
+	console.log(event)
 	if (!['GET', 'POST'].includes(event.httpMethod)) {
 		return Response.error(Error.NOT_ALLOWED)
 	}
@@ -77,6 +78,7 @@ const micropubFn = async event => {
 		}
 		return Response.send(204)
 	}
+	console.log(res &&res.error)
 	return Response.error(Error.INVALID, res && res.error)
 }
 
